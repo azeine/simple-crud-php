@@ -39,7 +39,7 @@
           echo "<td class={$cellStyle}>" . $data['name'] . '</td>';
           echo "<td class={$cellStyle}>" . $data['phone'] . '</td>';
           echo "<td class={$cellStyle}>" . $data['email'] . '</td>';
-          echo "<td class={$cellStyle}><a href='edit.php?id=$data[id]'>Edit</a> | <a href='delete.php?id=$data[id]'>Delete</a></td></tr>";
+          echo "<td class={$cellStyle}><a href='functions/edit.php?id=$data[id]'>Edit</a> | <a href='functions/delete.php?id=$data[id]'>Delete</a></td></tr>";
           echo '</tr>';
         } ?>
       </tbody>
