@@ -44,18 +44,21 @@
         </tr>
       </thead>
       <tbody>
-        <?php while ($data = mysqli_fetch_array($init)) {
-          echo "<tr class='$rowStyle'>";
-          echo "<td class='$cellStyle'>" . $data['id'] . '</td>';
-          echo "<td class='$cellStyle'>" . $data['name'] . '</td>';
-          echo "<td class='$cellStyle'>" . $data['phone'] . '</td>';
-          echo "<td class='$cellStyle'>" . $data['email'] . '</td>';
-          echo "<td class='$editLayout'><a class='$btnStyle' href='functions/edit.php?id=$data[id]'>$editIcon</a><a class='$btnStyle' href='functions/delete.php?id=$data[id]'>$delIcon</a></td></tr>";
-          echo '</tr>';
-        } ?>
+        <?php
+          $index = 1;
+          while ($data = mysqli_fetch_array($init)) {
+            echo "<tr class='$rowStyle'>";
+            echo "<td class='$cellStyle'>" . $index . '</td>';
+            echo "<td class='$cellStyle'>" . $data['name'] . '</td>';
+            echo "<td class='$cellStyle'>" . $data['phone'] . '</td>';
+            echo "<td class='$cellStyle'>" . $data['email'] . '</td>';
+            echo "<td class='$editLayout'><a class='$btnStyle' href='functions/edit.php?id=$data[id]'>$editIcon</a><a class='$btnStyle' href='functions/delete.php?id=$data[id]'>$delIcon</a></td></tr>";
+            echo '</tr>';
+            ++$index;
+          }
+        ?>
       </tbody>
     </table>
-  </div>
   </div>
 </body>
 
